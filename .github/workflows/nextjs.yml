@@ -38,4 +38,4 @@ jobs:
               docker stop survey || true
               docker rm survey || true
               docker rmi $(docker images ${{ secrets.DOCKERHUB_REPO }} -q) || true
-              docker run -d --network docker-network -p 3000:3000 --name survey ${{ secrets.DOCKERHUB_REPO }}
+              docker run -d --network eelnetwork -p 3000:3000 --name survey ${{ secrets.DOCKERHUB_REPO }}
