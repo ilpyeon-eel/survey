@@ -1,3 +1,4 @@
+// Dropdown.tsx
 'use client';
 
 import { useState } from 'react';
@@ -27,23 +28,25 @@ export default function Dropdown({
   };
 
   return (
-    <>
-      <div className="mt-[16px] px-[18px] py-[14px] border border-[#f2f2f2] rounded-[6px] w-full cursor-pointer">
-        <div
-          onClick={toggle}
-          className="flex justify-between w-full bg-white px-3 py-2"
-        >
-          {selected}
-
-          <Image
-            src={'/arrow_drop_down_24.svg'}
-            alt="arrow_drop_down"
-            height={24}
-            width={24}
-          />
-        </div>
+    <div className="relative w-full mt-[16px]">
+      <div
+        onClick={toggle}
+        className="flex justify-between items-center px-[18px] py-[14px] border border-[#f2f2f2] rounded-[6px] w-full cursor-pointer bg-[white]"
+      >
+        {selected}
+        <Image
+          src={'/arrow_drop_down_24.svg'}
+          alt="arrow_drop_down"
+          height={24}
+          width={24}
+        />
       </div>
-      {open && <DropdownList options={options} onSelect={handleSelect} />}
-    </>
+
+      {open && (
+        <div className="absolute left-0 top-full mt-2 z-50 w-full bg-[white]">
+          <DropdownList options={options} onSelect={handleSelect} />
+        </div>
+      )}
+    </div>
   );
 }
