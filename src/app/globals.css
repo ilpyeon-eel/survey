@@ -4,7 +4,6 @@
 html,
 body {
   display: flex;
-  border: 1px solid black; /* 지우기 */
   flex-direction: column;
   align-items: center;
   height: 100%;
