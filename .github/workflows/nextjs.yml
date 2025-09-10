@@ -3,7 +3,7 @@ name: Deploy Next.js with Docker Hub
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
